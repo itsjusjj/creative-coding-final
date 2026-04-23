@@ -6,7 +6,7 @@ let img
 //Preload function to load the sound file
 function preload() {
   mySong = loadSound('World.mp3'); //Gets the sound file from the same folder
-  img = loadImage('Space.jpg'); //Gets the iamge file for the background from the same folder
+  img = loadImage('Moon.WEBP'); //Gets the iamge file for the background from the same folder
 
 }
 
@@ -18,7 +18,7 @@ function setup() {
 
   fft = new p5.FFT();//FFT is used here to "analysis algorithm that isolates individual audio frequencies within a waveform." (p5.js reference)
 
-  img.filter(BLUR, 3) //This is used the blur out the background iamge
+  img.filter(BLUR, 1) //This is used the blur out the background iamge
 
 }
 
@@ -34,10 +34,10 @@ function draw() {
   amp = fft.getEnergy(20,200)
 
   push() //Push and pop is here to only effect the script between them
-  if (amp > 210) {
-    rotate(random(-0.5, 0.5)) //This makes the background shake if the amplitude is above 230
-  }
-  image(img, 0, 0, width, height) //Puts the background in the middle of the canvas
+    if (amp > 210) {
+      rotate(random(-0.5, 0.5)) //This makes the background shake if the amplitude is above 230
+    }
+    image(img, 0, 0, width, height) //Puts the background in the middle of the canvas
   pop()
 
   let wave = fft.waveform();
@@ -63,6 +63,7 @@ function draw() {
     vertex(x, y); 
     }
     endShape()
+
 }
 
 //Pause and play function
