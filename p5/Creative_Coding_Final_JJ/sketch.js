@@ -6,7 +6,7 @@ let img
 //Preload function to load the sound file
 function preload() {
   mySong = loadSound('World.mp3'); //Gets the sound file from the same folder
-  img = loadImage('Moon.WEBP'); //Gets the iamge file for the background from the same folder
+  img = loadImage('Moon.webp'); //Gets the iamge file for the background from the same folder
 
 }
 
