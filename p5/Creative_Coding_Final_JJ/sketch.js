@@ -35,7 +35,7 @@ function draw() {
 
   push() //Push and pop is here to only effect the script between them
     if (amp > 210) {
-      rotate(random(-0.5, 0.5)) //This makes the background shake if the amplitude is above 230
+      rotate(random(-1, 1)) //This makes the background shake if the amplitude is above 230
     }
     image(img, 0, 0, width, height) //Puts the background in the middle of the canvas
   pop()
